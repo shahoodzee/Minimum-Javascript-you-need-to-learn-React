@@ -8,7 +8,8 @@ const DoSomething =() => {
 
 }
 
-//if you want to export a funciton inton another file we use eport keyword with normal fucntions
+//if you want to export a funciton inton another file we use eport keyword 
+//with normal fucntions
 export default function DoSomething(){
 
 }
@@ -100,8 +101,7 @@ ARRAY MANIPUALTION
 //.map() function
 
 let names = ["ali","sheila","shabana"]
-//you want to add these names in the heading tags of your website 
-// so u iuse the map function
+//you want to add these names in the heading tags of your website. So u use the map function
 names.map((name)=>{
     return <h1> {name} </h1>
 })
@@ -121,3 +121,70 @@ fetch
 */
 
 //asynchronous programming in javascript
+var name = "shahood"
+console.log(name)       //shahood
+var name = "ali"
+console.log(name)      //ali
+
+the name will be ali for the second time because its instantenous change but this is not the case for every application in web dev
+it depends on many factors when u fetch data from API's
+1 speed of interrnet
+2 how far u r away from server
+
+example : supppose iam fetching data from URL about some movies 
+
+var Listofmovies = fecth("url.com/movies")
+console.log(Listofmovies)
+
+/*The console.log will not work because that fetch will take some time to retrieve all the data from the URL. But the var Listofmovies doesnt wait for data to arrive.
+As a result we donot get the desired output from the console.log(). 
+Many languages deal it with many ways. JS does it by using PROMISES.*/
+
+//A promise is  just a class that you can invoke. 
+//resolve and reject are two parameters
+//when some condition is true we want to resolve that event
+//when an error occurs we call reject function when u want a promise to fail
+
+const event = new Promise((resolve, reject)=>{
+    var name = "shahood";
+    if (name == "shahood") {
+        resolve();
+    } else {
+        reject("name was not shhaood , the name was " + name);
+    }
+});
+
+event.then(()=> {
+    console.log(name);
+
+ }).catch((err)=> {
+    console.log(err);
+
+ });
+ 
+//bascially this code states if the name is shahood our condition is true and we wanna resolve that event \.... the event was sucessfull 
+// in reading the data. else we wanna see the error 
+//so what we can understand about promises from this example is that 
+// if the data has been receieved then we wanna do something
+// else if we have s=faced some errors we wanna see those errors 
+// there is also a finally case which will be called wether an error has been caused or any condition has met
+
+event
+    .then(()=>{
+        console.log(name);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+    .finally(()=>{
+        console.log("promise finished")
+    });
+
+//Async keyword
+//We use async keyword to get rid of try and catch block
+// the trick is u add the keyword wait 
+async function asyncCall() {
+    const result = await fetch(URL.com);
+    console.log(result);
+}
+// So the variables who have been given value using await keyword only get asynchronous and wait for information to arrive and then console.log it on screen.
