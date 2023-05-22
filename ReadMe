@@ -1,0 +1,123 @@
+//normal way of declaring fucntions
+function DoSomething() {
+}
+
+//But we can now use arrow function usign cosnt keyword
+const DoSomething =() => { 
+//recommended because beneficial when using call back functions
+
+}
+
+//if you want to export a funciton inton another file we use eport keyword with normal fucntions
+export default function DoSomething(){
+
+}
+
+//with arrow functions
+export const DoSomething =() => { 
+
+}
+//In react u define components which are just funcitons which takes in props which are arguments
+//and return html and example given below
+
+const MyComponent =() => {
+    return <div></div>
+}
+{/* 
+
+// Anonymous functions (like a button having onClick event)
+<button onClick={}>
+</button> 
+
+
+//in normal javascript you declare the name of the function in the parameter of Onclick function.
+<button onClick="function_1"> 
+</button>
+
+But in react you can just use it without decalring the name: 
+<button 
+    onClick={() => {
+        console.log("hello world");
+    }}
+</button> you can execute command with out declaring any function name
+*/}
+
+
+//React allows u to write JS code in HTML which is called JSX 
+// IT decrease the amount of code written for UI
+ 
+//TERNARY  OPERATOR
+let age = 10;
+let name = age >10 ? "pedro" : "jack";
+// this code means if age is less then 10 then the name is pedro else the name is jack
+//In React we use ternary operators like 
+const component = () => {
+
+    return age > 19 ? <div>1st Div</div> : <div>2nd div</div>;
+
+}
+
+//Object in JS
+const person = {
+    name: "pedro",
+    age: 20,
+    ismarried: false,
+};
+const name = person.name
+const age = person.age
+const ismarried = person.ismarried
+
+//In React
+const {name,age,ismarried} = person;
+ 
+//another notation of decalaring  obejcts in React
+const name1 = "pedro"
+const age1 = 12;
+const ismarried1;
+const person = { name1, age1, ismarried1: false,}; 
+
+// Inorder to copy a object form another project
+const person2 = {...person}
+
+//copy the an object by changing the name from pedro to ali
+const person3 = {...person,name:"ali"}
+
+//Same is the case with arrays
+const names = ["ali","shela","ajkil"]
+
+//copy this array into another and add one more nanme
+const names2 = [...names,"shahood"]
+
+/* 
+ARRAY MANIPUALTION
+
+.map()
+.filter()
+.reduce()
+
+*/
+
+//.map() function
+
+let names = ["ali","sheila","shabana"]
+//you want to add these names in the heading tags of your website 
+// so u iuse the map function
+names.map((name)=>{
+    return <h1> {name} </h1>
+})
+//it renders the names in the list into your HTML page
+
+//.filter function
+let names = ["pedro", "jessica","carol","pedro"]
+//u want to filter out pedro(repeated names) form the list
+names.filter((name)=>{
+    return name!=="pedro"
+})
+
+/*
+async 
+await 
+fetch
+*/
+
+//asynchronous programming in javascript
